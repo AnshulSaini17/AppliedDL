@@ -18,12 +18,7 @@ logger = setup_logger(__name__)
 
 
 def run_baseline_inference(config_path: str):
-    """
-    Run zero-shot baseline inference on test set.
     
-    Args:
-        config_path: Path to experiment config
-    """
     # Load config
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
@@ -44,7 +39,7 @@ def run_baseline_inference(config_path: str):
     
     logger.info(f"Test samples: {len(test_dataset)}")
     
-    # Load model (zero-shot, no training)
+
     device = "cuda" if torch.cuda.is_available() else "cpu"
     logger.info(f"Using device: {device}")
     
@@ -76,8 +71,8 @@ def run_baseline_inference(config_path: str):
     for i in tqdm(range(0, len(test_dataset), batch_size), desc="Inference"):
         batch = test_dataset[i:i + batch_size]
         
-        # Process audio - batch is a dict of lists, not list of dicts
-        # Pad or truncate to exactly 30 seconds (Whisper's expected length)
+
+        # Pad or truncate to exactly 30 seconds 
         import numpy as np
         max_samples = 30 * 16000
         audio_arrays = []

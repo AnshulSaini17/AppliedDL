@@ -12,7 +12,7 @@ from ..utils.logging import setup_logger
 logger = setup_logger(__name__)
 
 
-def compare_three_models(config_path: str):
+def compare_models(config_path: str):
     """
     Compare baseline and fine-tuned models with comprehensive analysis.
     
@@ -141,7 +141,7 @@ def compare_three_models(config_path: str):
     from ..utils.advanced_plotting import create_comprehensive_report
     create_comprehensive_report(out_dir, plots_dir)
     
-    logger.info("Three-way comparison complete!")
+    logger.info("Comparison complete!")
 
 
 if __name__ == "__main__":
@@ -151,5 +151,5 @@ if __name__ == "__main__":
     parser.add_argument("--config", default="configs/experiment.yaml")
     args = parser.parse_args()
     
-    compare_three_models(args.config)
+    compare_models(args.config)
 

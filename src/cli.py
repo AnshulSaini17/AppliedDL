@@ -83,11 +83,11 @@ def summarize_command(args):
 
 
 def compare_command(args):
-    """Three-way comparison subcommand."""
-    from .eval.compare_three_models import compare_three_models
+    """Compare baseline and fine-tuned models."""
+    from .eval.compare_models import compare_models
     
-    logger.info("Running three-way comparison...")
-    compare_three_models(args.config)
+    logger.info("Running model comparison...")
+    compare_models(args.config)
 
 
 def plot_command(args):

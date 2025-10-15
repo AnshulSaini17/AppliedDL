@@ -16,27 +16,17 @@ logger = setup_logger(__name__)
 
 
 def load_librispeech_data(config: Dict) -> Tuple[DatasetDict, pd.DataFrame]:
-    """
-    Load LibriSpeech dataset - NO AUTHENTICATION NEEDED!
-    
-    Args:
-        config: Experiment configuration
-    
-    Returns:
-        Dataset splits and statistics DataFrame
-    """
     seed = config.get('seed', 42)
     data_config = config['data']
     
     logger.info("Loading LibriSpeech dataset with LIMITED subsets to save disk space...")
     
-    # Download limits to avoid 60GB+ download
     max_train = data_config.get('max_per_accent_train', 1500)
     max_val = data_config.get('max_per_accent_eval', 300)
     max_test = 500
     
     logger.info(f"Loading training data: train.100 (will select {max_train} samples)")
-    # Download train.100 and select subset
+    
     train_full = load_dataset('librispeech_asr', 'clean', split='train.100')
     train_ds = train_full.select(range(min(max_train, len(train_full))))
     logger.info(f"Selected {len(train_ds)} training samples")
@@ -75,7 +65,7 @@ def load_librispeech_data(config: Dict) -> Tuple[DatasetDict, pd.DataFrame]:
     from datasets import concatenate_datasets
     test_ds = concatenate_datasets([test_clean, test_other])
     
-    # Rename 'text' field to 'sentence' for compatibility
+
     def rename_text_field(example):
         example['sentence'] = example['text']
         return example
@@ -84,7 +74,6 @@ def load_librispeech_data(config: Dict) -> Tuple[DatasetDict, pd.DataFrame]:
     val_ds = val_ds.map(rename_text_field)
     test_ds = test_ds.map(rename_text_field)
     
-    # Limit data if specified
     max_train = data_config.get('max_per_accent_train', None)
     max_eval = data_config.get('max_per_accent_eval', None)
     
