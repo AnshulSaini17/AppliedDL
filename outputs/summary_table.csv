@@ -1,0 +1,5 @@
+accent,wer_baseline,wer_finetuned,delta_wer,rel_wer_improvement,cer_baseline,cer_finetuned,delta_cer
+other,8.15,23.90,-15.75,-193.13,3.75,17.47,-13.71
+clean,4.41,15.48,-11.07,-250.96,1.72,10.23,-8.50
+OVERALL,5.95,18.93,-12.99,-218.46,2.53,13.11,-10.58
+ROBUSTNESS_METRIC,3.74,8.42,-4.68,,,,

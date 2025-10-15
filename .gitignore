@@ -1,0 +1,72 @@
+# Data (large, don't commit)
+data/*
+!data/.gitkeep
+!data/README.md
+
+# Checkpoints (large model weights, don't commit)
+checkpoints/*
+!checkpoints/.gitkeep
+
+# Outputs - EXCLUDE large files, INCLUDE small results
+outputs/*
+!outputs/.gitkeep
+!outputs/baseline_metrics.csv
+!outputs/finetuned_metrics.csv
+!outputs/summary_table.csv
+!outputs/comparison_table.csv
+!outputs/dataset_stats.csv
+!outputs/training_history.json
+!outputs/plots/
+outputs/plots/*
+!outputs/plots/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+wandb/
+

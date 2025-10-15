@@ -1,0 +1,5 @@
+split,accent,n_samples,hours
+train,clean,1500,5.367594479166663
+validation,clean,500,0.875913871527778
+test,other,240,0.42680831597222246
+test,clean,260,0.6003389236111106

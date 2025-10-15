@@ -1,0 +1,54 @@
+seed: 42
+
+model_name_or_path: openai/whisper-small
+language: en
+task: transcribe
+sample_rate: 16000
+
+accents:
+  - clean
+  - other
+
+data:
+  dataset_name: librispeech_asr
+  use_librispeech: true
+  split_strategy: speaker_stratified
+  min_per_accent_train: 100
+  max_per_accent_train: 1500     # Conservative amount for stable training
+  max_per_accent_eval: 500
+  limit_total_train_hours: 2.0
+  max_samples_per_accent: 1000
+  text_normalization: basic
+
+
+training:
+  num_train_epochs: 3
+  learning_rate: 5.0e-6
+  per_device_train_batch_size: 8
+  per_device_eval_batch_size: 8
+  gradient_accumulation_steps: 2
+  warmup_ratio: 0.1
+  fp16: true
+  bf16: false
+  label_smoothing_factor: 0.0
+  generation:
+    num_beams: 1
+    length_penalty: 1.0
+    no_repeat_ngram_size: 0
+
+peft:
+  use_lora: false
+  r: 16
+  alpha: 32
+  dropout: 0.1
+  target_modules:
+    - q_proj
+    - v_proj
+    - k_proj
+    - out_proj
+
+paths:
+  out_dir: outputs
+  ckpt_dir: checkpoints/whisper-small-finetuned
+  plots_dir: outputs/plots
+

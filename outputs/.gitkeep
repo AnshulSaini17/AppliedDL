@@ -1,0 +1,8 @@
+# This directory will contain experiment outputs:
+# - dataset_stats.csv
+# - baseline_metrics.csv / baseline_predictions.jsonl
+# - finetuned_metrics.csv / finetuned_predictions.jsonl
+# - summary_table.csv
+# - train_logs.json
+# - plots/
+
