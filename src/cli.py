@@ -22,17 +22,10 @@ def prepare_data_command(args):
     # Set seed
     set_seed(config.get('seed', 42))
     
-    # Check which dataset to use
-    use_librispeech = config.get('data', {}).get('use_librispeech', False)
-    
-    if use_librispeech:
-        logger.info("Using LibriSpeech dataset")
-        from .data.load_librispeech import load_librispeech_data
-        dataset_dict, stats_df = load_librispeech_data(config)
-    else:
-        logger.info("Using Common Voice dataset")
-        from .data.load_commonvoice import prepare_commonvoice_data
-        dataset_dict, stats_df = prepare_commonvoice_data(config)
+    # Load LibriSpeech dataset
+    logger.info("Loading LibriSpeech dataset")
+    from .data.load_librispeech import load_librispeech_data
+    dataset_dict, stats_df = load_librispeech_data(config)
     
     # Save stats
     out_dir = Path(config['paths']['out_dir'])

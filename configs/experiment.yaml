@@ -11,10 +11,9 @@ accents:
 
 data:
   dataset_name: librispeech_asr
-  use_librispeech: true
   split_strategy: speaker_stratified
   min_per_accent_train: 100
-  max_per_accent_train: 1500     # Conservative amount for stable training
+  max_per_accent_train: 1500    
   max_per_accent_eval: 500
   limit_total_train_hours: 2.0
   max_samples_per_accent: 1000
