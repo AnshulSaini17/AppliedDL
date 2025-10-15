@@ -10,7 +10,7 @@
 source ~/.bashrc
 mamba activate accent-asr
 
-# === USE BIG DSS STORAGE (150GB quota!) ===
+
 export DSS_STORAGE="/dss/dssmcmlfs01/pr74ze/pr74ze-dss-0001/$USER"
 
 # All caches and heavy data go to big storage

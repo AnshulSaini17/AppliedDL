@@ -1,13 +1,13 @@
-# Data (large, don't commit)
+
 data/*
 !data/.gitkeep
 !data/README.md
 
-# Checkpoints (large model weights, don't commit)
+
 checkpoints/*
 !checkpoints/.gitkeep
 
-# Outputs - EXCLUDE large files, INCLUDE small results
+
 outputs/*
 !outputs/.gitkeep
 !outputs/baseline_metrics.csv
@@ -20,7 +20,7 @@ outputs/*
 outputs/plots/*
 !outputs/plots/*.png
 
-# Python
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -42,10 +42,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Jupyter Notebook
+
 .ipynb_checkpoints
 
-# Environment
+
 .env
 .venv
 env/
@@ -54,18 +54,18 @@ ENV/
 env.bak/
 venv.bak/
 
-# IDEs
+
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+
 .DS_Store
 Thumbs.db
 
-# Logs
+
 logs/
 *.log
 wandb/

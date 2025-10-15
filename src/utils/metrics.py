@@ -74,15 +74,7 @@ def compute_metrics_batch(
 def compute_metrics_by_accent(
     predictions: pd.DataFrame
 ) -> pd.DataFrame:
-    """
-    Compute metrics grouped by accent.
     
-    Args:
-        predictions: DataFrame with columns: accent, reference, hypothesis
-    
-    Returns:
-        DataFrame with per-accent metrics
-    """
     results = []
     
     for accent in predictions['accent'].unique():
@@ -105,15 +97,7 @@ def compute_metrics_by_accent(
 
 
 def compute_overall_metrics(predictions: pd.DataFrame) -> Dict[str, float]:
-    """
-    Compute overall metrics across all accents.
     
-    Args:
-        predictions: DataFrame with columns: reference, hypothesis
-    
-    Returns:
-        Dictionary with overall metrics
-    """
     refs = predictions['reference'].tolist()
     hyps = predictions['hypothesis'].tolist()
     

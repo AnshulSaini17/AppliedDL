@@ -63,7 +63,7 @@ def load_whisper_model(
             lora_dropout=lora_cfg.get('dropout', 0.1),
             target_modules=lora_cfg.get('target_modules', ['q_proj', 'v_proj']),
             bias="none",
-            task_type="SEQ_2_SEQ_LM"  # FIXED: Was CAUSAL_LM
+            task_type="SEQ_2_SEQ_LM"  
         )
         
         # Prepare model for quantized training (if needed)
