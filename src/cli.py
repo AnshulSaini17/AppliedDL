@@ -118,7 +118,7 @@ def main():
     # Prepare data
     prepare_parser = subparsers.add_parser(
         'prepare-data',
-        help='Prepare Common Voice dataset'
+        help='Prepare LibriSpeech dataset'
     )
     prepare_parser.add_argument(
         '--config',

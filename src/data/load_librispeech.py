@@ -1,4 +1,4 @@
-"""LibriSpeech dataset loader - much simpler than Common Voice!"""
+"""LibriSpeech dataset loader"""
 
 import json
 from pathlib import Path
