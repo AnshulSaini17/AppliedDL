@@ -7,16 +7,7 @@ from .text import normalize_for_metrics
 
 
 def compute_wer(references: List[str], hypotheses: List[str]) -> float:
-    """
-    Compute Word Error Rate.
-    
-    Args:
-        references: List of reference transcripts
-        hypotheses: List of hypothesis transcripts
-    
-    Returns:
-        WER as a percentage (0-100)
-    """
+
     if len(references) != len(hypotheses):
         raise ValueError("Number of references and hypotheses must match")
     
@@ -43,16 +34,7 @@ def compute_wer(references: List[str], hypotheses: List[str]) -> float:
 
 
 def compute_cer(references: List[str], hypotheses: List[str]) -> float:
-    """
-    Compute Character Error Rate.
-    
-    Args:
-        references: List of reference transcripts
-        hypotheses: List of hypothesis transcripts
-    
-    Returns:
-        CER as a percentage (0-100)
-    """
+
     if len(references) != len(hypotheses):
         raise ValueError("Number of references and hypotheses must match")
     
@@ -82,16 +64,7 @@ def compute_metrics_batch(
     pred_strs: List[str],
     ref_strs: List[str]
 ) -> Dict[str, float]:
-    """
-    Compute both WER and CER for a batch.
     
-    Args:
-        pred_strs: List of predicted transcripts
-        ref_strs: List of reference transcripts
-    
-    Returns:
-        Dictionary with 'wer' and 'cer' keys
-    """
     return {
         "wer": compute_wer(ref_strs, pred_strs),
         "cer": compute_cer(ref_strs, pred_strs)

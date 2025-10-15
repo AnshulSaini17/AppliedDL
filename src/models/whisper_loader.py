@@ -91,18 +91,7 @@ def load_whisper_for_inference(
     task: str = "transcribe",
     device: str = "cuda"
 ) -> tuple:
-    """
-    Load Whisper model from checkpoint for inference.
     
-    Args:
-        model_path: Path to saved model checkpoint
-        language: Target language
-        task: Task type
-        device: Device to load on
-    
-    Returns:
-        Tuple of (model, processor)
-    """
     logger.info(f"Loading model from checkpoint: {model_path}")
     
     processor = WhisperProcessor.from_pretrained(model_path)

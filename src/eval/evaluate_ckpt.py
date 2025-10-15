@@ -18,13 +18,7 @@ logger = setup_logger(__name__)
 
 
 def evaluate_checkpoint(config_path: str, checkpoint_path: str = None):
-    """
-    Evaluate fine-tuned model checkpoint on test set.
-    
-    Args:
-        config_path: Path to experiment config
-        checkpoint_path: Path to checkpoint (overrides config)
-    """
+
     # Load config
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)

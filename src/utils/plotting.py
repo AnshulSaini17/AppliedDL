@@ -11,14 +11,7 @@ def plot_wer_by_accent(
     finetuned_csv: Union[str, Path],
     out_png: Union[str, Path]
 ):
-    """
-    Plot WER comparison between baseline and fine-tuned models by accent.
     
-    Args:
-        baseline_csv: Path to baseline metrics CSV
-        finetuned_csv: Path to fine-tuned metrics CSV
-        out_png: Output path for plot
-    """
     baseline = pd.read_csv(baseline_csv)
     finetuned = pd.read_csv(finetuned_csv)
     
@@ -75,14 +68,7 @@ def plot_delta_wer(
     finetuned_csv: Union[str, Path],
     out_png: Union[str, Path]
 ):
-    """
-    Plot ΔWER (improvement) by accent.
     
-    Args:
-        baseline_csv: Path to baseline metrics CSV
-        finetuned_csv: Path to fine-tuned metrics CSV
-        out_png: Output path for plot
-    """
     baseline = pd.read_csv(baseline_csv)
     finetuned = pd.read_csv(finetuned_csv)
     
@@ -128,13 +114,7 @@ def plot_error_distribution(
     predictions_jsonl: Union[str, Path],
     out_png: Union[str, Path]
 ):
-    """
-    Plot distribution of errors (optional utility).
     
-    Args:
-        predictions_jsonl: Path to predictions JSONL
-        out_png: Output path for plot
-    """
     # Placeholder for future extension
     pass
 

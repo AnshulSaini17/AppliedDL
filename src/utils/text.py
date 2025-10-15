@@ -5,16 +5,7 @@ import unicodedata
 
 
 def normalize_text(text: str, mode: str = "basic") -> str:
-    """
-    Normalize text for ASR evaluation.
-    
-    Args:
-        text: Input text
-        mode: Normalization mode ('basic' or 'aggressive')
-    
-    Returns:
-        Normalized text
-    """
+
     if not text:
         return ""
     
@@ -41,16 +32,6 @@ def normalize_text(text: str, mode: str = "basic") -> str:
 
 
 def normalize_for_metrics(text: str) -> str:
-    """
-    Normalize text specifically for WER/CER computation.
-    Uses consistent normalization for both reference and hypothesis.
-    
-    Args:
-        text: Input text
-    
-    Returns:
-        Normalized text
-    """
     # Lowercase and unicode normalize
     text = unicodedata.normalize("NFKC", text.lower())
     

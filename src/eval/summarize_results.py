@@ -12,15 +12,7 @@ logger = setup_logger(__name__)
 
 
 def compute_robustness_metric(metrics_df: pd.DataFrame) -> float:
-    """
-    Compute accent robustness as max_WER - min_WER.
-    
-    Args:
-        metrics_df: DataFrame with per-accent WER
-    
-    Returns:
-        Robustness metric (lower is better)
-    """
+   
     # Exclude overall row
     accent_metrics = metrics_df[metrics_df['accent'] != 'OVERALL']
     
@@ -34,12 +26,6 @@ def compute_robustness_metric(metrics_df: pd.DataFrame) -> float:
 
 
 def summarize_results(config_path: str):
-    """
-    Summarize baseline vs fine-tuned results and generate plots.
-    
-    Args:
-        config_path: Path to experiment config
-    """
     # Load config
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)

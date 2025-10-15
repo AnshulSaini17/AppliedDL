@@ -11,17 +11,6 @@ def setup_logger(
     log_file: Optional[Path] = None,
     level: int = logging.INFO
 ) -> logging.Logger:
-    """
-    Set up a logger with console and optional file handlers.
-    
-    Args:
-        name: Logger name
-        log_file: Optional path to log file
-        level: Logging level
-    
-    Returns:
-        Configured logger instance
-    """
     logger = logging.getLogger(name)
     logger.setLevel(level)
     
