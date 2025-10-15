@@ -3,7 +3,7 @@
 import jiwer
 from typing import List, Dict, Tuple
 import pandas as pd
-from .text import normalize_for_metrics
+from .utils import normalize_for_metrics
 
 
 def compute_wer(references: List[str], hypotheses: List[str]) -> float:

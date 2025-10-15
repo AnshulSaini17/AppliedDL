@@ -16,8 +16,7 @@ import evaluate
 
 from ..models.whisper_loader import load_whisper_model
 from ..models.collator import WhisperDataCollator
-from ..utils.seed import set_seed
-from ..utils.logging import setup_logger
+from ..utils.utils import set_seed, setup_logger
 from ..utils.metrics import compute_wer
 
 logger = setup_logger(__name__)

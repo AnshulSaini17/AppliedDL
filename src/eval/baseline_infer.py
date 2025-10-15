@@ -10,8 +10,7 @@ from tqdm import tqdm
 import pandas as pd
 
 from ..models.whisper_loader import load_whisper_model
-from ..utils.seed import set_seed
-from ..utils.logging import setup_logger
+from ..utils.utils import set_seed, setup_logger
 from ..utils.metrics import compute_metrics_by_accent, compute_overall_metrics
 
 logger = setup_logger(__name__)

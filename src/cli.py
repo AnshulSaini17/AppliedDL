@@ -5,8 +5,7 @@ import sys
 from pathlib import Path
 import yaml
 
-from .utils.logging import setup_logger
-from .utils.seed import set_seed
+from .utils.utils import setup_logger, set_seed
 
 logger = setup_logger(__name__)
 
@@ -92,7 +91,7 @@ def compare_command(args):
 
 def plot_command(args):
     """Generate all plots subcommand."""
-    from .utils.advanced_plotting import create_comprehensive_report
+    from .utils.plotting import create_comprehensive_report
     from pathlib import Path
     import yaml
     

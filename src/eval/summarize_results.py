@@ -5,7 +5,7 @@ from typing import Dict
 import yaml
 import pandas as pd
 
-from ..utils.logging import setup_logger
+from ..utils.utils import setup_logger
 from ..utils.plotting import plot_wer_by_accent, plot_delta_wer
 
 logger = setup_logger(__name__)

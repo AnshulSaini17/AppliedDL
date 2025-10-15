@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-from ..utils.logging import setup_logger
+from ..utils.utils import setup_logger
 
 logger = setup_logger(__name__)
 
@@ -138,7 +138,7 @@ def compare_models(config_path: str):
     
     # Generate comprehensive plots
     logger.info("Generating additional analysis plots...")
-    from ..utils.advanced_plotting import create_comprehensive_report
+    from ..utils.plotting import create_comprehensive_report
     create_comprehensive_report(out_dir, plots_dir)
     
     logger.info("Comparison complete!")

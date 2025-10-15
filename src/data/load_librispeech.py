@@ -9,8 +9,7 @@ from collections import defaultdict
 import numpy as np
 from tqdm import tqdm
 
-from ..utils.audio import get_audio_duration
-from ..utils.logging import setup_logger
+from ..utils.utils import get_audio_duration, setup_logger
 
 logger = setup_logger(__name__)
 
